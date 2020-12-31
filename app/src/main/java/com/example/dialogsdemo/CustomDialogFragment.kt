@@ -21,9 +21,14 @@ class CustomDialogFragment : DialogFragment() {
 
             val name = etName.text.toString()
 
-            Toast.makeText(context, "Entered name : $name",Toast.LENGTH_LONG).show()
+            if(name.isEmpty()){
+                Toast.makeText(context, "Please enter name !", Toast.LENGTH_SHORT).show()
+            }
+            else{
 
-            dismiss()
+                Toast.makeText(context, "Entered name : $name",Toast.LENGTH_LONG).show()
+                dismiss()
+            }
         }
 
         return rootView
